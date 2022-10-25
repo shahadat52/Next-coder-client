@@ -1,9 +1,12 @@
 import React, { useState } from "react";
+import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import logo from "../assets/coder.png";
+import { AuthContext } from "./Context/UserContext";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { user } = useContext(AuthContext);
   return (
     <div className="bg-gray-700">
       <div className="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
@@ -63,35 +66,46 @@ const Header = () => {
                 FAQ
               </NavLink>
             </li>
-            <li>
-              <img
-                aria-label="FAQ"
-                title="Ertugrul"
-                className="w-10 rounded-full"
-                src="https://i1.sndcdn.com/artworks-8A3UNl5vbfHj7PP0-6QAQjA-t500x500.jpg"
-                alt=""
-              />
-            </li>
-            <NavLink
-              to="/login"
-              aria-label="login"
-              title="Login"
-              className={({ isActive }) =>
-                isActive
-                  ? "font-medium tracking-wide text-red-300 transition-colors duration-200 hover:text-deep-purple-accent-400"
-                  : "font-medium tracking-wide  transition-colors duration-200 hover:text-deep-purple-accent-400"
-              }
-            >
-              Login
-            </NavLink>
-            <NavLink
-              // to="/logout"
-              aria-label="logout"
-              title="Logout"
-              className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-deep-purple-accent-400"
-            >
-              Logout
-            </NavLink>
+            {user && user.uid ? (
+              <>
+                <li>
+                  <img
+                    aria-label="FAQ"
+                    title={user.displayName}
+                    className="w-10 rounded-full"
+                    src={user.photoURL}
+                    alt=""
+                  />
+                </li>
+                <li>
+                  <NavLink
+                    // to="/logout"
+                    aria-label="logout"
+                    title="Logout"
+                    className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                  >
+                    Logout
+                  </NavLink>
+                </li>
+              </>
+            ) : (
+              <>
+                <li>
+                  <NavLink
+                    to="/login"
+                    aria-label="login"
+                    title="Login"
+                    className={({ isActive }) =>
+                      isActive
+                        ? "font-medium tracking-wide text-red-300 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                        : "font-medium tracking-wide  transition-colors duration-200 hover:text-deep-purple-accent-400"
+                    }
+                  >
+                    Login
+                  </NavLink>
+                </li>
+              </>
+            )}
           </ul>
           <div className="lg:hidden">
             <button
@@ -204,39 +218,47 @@ const Header = () => {
                           FAQ
                         </NavLink>
                       </li>
-                      <li>
-                        <img
-                          aria-label="FAQ"
-                          title="Ertugrul"
-                          className="w-10 rounded-full"
-                          src="https://i1.sndcdn.com/artworks-8A3UNl5vbfHj7PP0-6QAQjA-t500x500.jpg"
-                          alt=""
-                        />
-                      </li>
-                      <li>
-                        <NavLink
-                          to="/login"
-                          aria-label="login"
-                          title="Login"
-                          className={({ isActive }) =>
-                            isActive
-                              ? "font-medium tracking-wide text-red-300 transition-colors duration-200 hover:text-deep-purple-accent-400"
-                              : "font-medium tracking-wide  transition-colors duration-200 hover:text-deep-purple-accent-400"
-                          }
-                        >
-                          Login
-                        </NavLink>
-                      </li>
-                      <li>
-                        <NavLink
-                          // to="/logout"
-                          aria-label="logout"
-                          title="Logout"
-                          className=" font-medium tracking-wide text-black transition-colors duration-200 hover:text-deep-purple-accent-400"
-                        >
-                          Logout
-                        </NavLink>
-                      </li>
+
+                      {user && user.uid ? (
+                        <>
+                          <li>
+                            <img
+                              aria-label="FAQ"
+                              title={user.displayName}
+                              className="w-10 rounded-full"
+                              src={user.photoURL}
+                              alt=""
+                            />
+                          </li>
+                          <li>
+                            <NavLink
+                              // to="/logout"
+                              aria-label="logout"
+                              title="Logout"
+                              className=" font-medium tracking-wide text-black transition-colors duration-200 hover:text-deep-purple-accent-400"
+                            >
+                              Logout
+                            </NavLink>
+                          </li>
+                        </>
+                      ) : (
+                        <>
+                          <li>
+                            <NavLink
+                              to="/login"
+                              aria-label="login"
+                              title="Login"
+                              className={({ isActive }) =>
+                                isActive
+                                  ? "font-medium tracking-wide text-red-300 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                                  : "font-medium tracking-wide  transition-colors duration-200 hover:text-deep-purple-accent-400"
+                              }
+                            >
+                              Login
+                            </NavLink>
+                          </li>
+                        </>
+                      )}
                     </ul>
                   </nav>
                 </div>

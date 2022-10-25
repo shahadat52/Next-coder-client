@@ -1,8 +1,24 @@
 import React from "react";
+import { useContext } from "react";
 import { FaGithub, FaGoogle } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { AuthContext } from "./Context/UserContext";
+import Swal from "sweetalert2";
 
 const Register = () => {
+  const { logInWithGoogle } = useContext(AuthContext);
+
+  const handleGoogleSignin = () => {
+    logInWithGoogle()
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+        Swal.fire("Good job!", "User Login successful!", "success");
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  };
   return (
     <div className="flex justify-center items-center pt-8">
       <div className="flex flex-col max-w-md p-6 rounded-md sm:p-10 bg-gray-200 text-gray-900">
@@ -92,7 +108,7 @@ const Register = () => {
         </div>
         <div className="flex justify-center space-x-4">
           <button
-            // onClick={handleGoogleSignin}
+            onClick={handleGoogleSignin}
             aria-label="Log in with Google"
             title="Google Sign In"
             className="p-3 rounded-sm text-3xl"
