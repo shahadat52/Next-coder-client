@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
+import logo from "../assets/coder.png";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -13,21 +14,8 @@ const Header = () => {
             title="Next-Coder"
             className="inline-flex items-center"
           >
-            <svg
-              className="w-8 text-blue-400"
-              viewBox="0 0 24 24"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeMiterlimit="10"
-              stroke="currentColor"
-              fill="none"
-            >
-              <rect x="3" y="1" width="7" height="12" />
-              <rect x="3" y="17" width="7" height="6" />
-              <rect x="14" y="1" width="7" height="6" />
-              <rect x="14" y="11" width="7" height="12" />
-            </svg>
+            <img className="w-18 h-12 rounded-2xl " src={logo} alt="" />
+
             <span className="ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase">
               Next-Coder
             </span>
@@ -74,6 +62,15 @@ const Header = () => {
               >
                 FAQ
               </NavLink>
+            </li>
+            <li>
+              <img
+                aria-label="FAQ"
+                title="Ertugrul"
+                className="w-10 rounded-full"
+                src="https://i1.sndcdn.com/artworks-8A3UNl5vbfHj7PP0-6QAQjA-t500x500.jpg"
+                alt=""
+              />
             </li>
           </ul>
           <div className="lg:hidden">
