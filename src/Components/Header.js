@@ -5,7 +5,7 @@ import logo from "../assets/coder.png";
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   return (
-    <div className="bg-gray-100">
+    <div className="bg-gray-700">
       <div className="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
         <div className="relative flex items-center justify-between">
           <Link
@@ -16,11 +16,11 @@ const Header = () => {
           >
             <img className="w-18 h-12 rounded-2xl " src={logo} alt="" />
 
-            <span className="ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase">
+            <span className="ml-2 text-2xl font-bold tracking-wide text-red-300 uppercase">
               Next-Coder
             </span>
           </Link>
-          <ul className="flex items-center hidden space-x-8 lg:flex">
+          <ul className="flex items-center hidden space-x-8 lg:flex text-gray-200">
             <li>
               <NavLink
                 to="/courses"
@@ -28,8 +28,8 @@ const Header = () => {
                 title="Courses"
                 className={({ isActive }) =>
                   isActive
-                    ? "font-medium tracking-wide text-blue-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-                    : "font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                    ? "font-medium tracking-wide text-red-300 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                    : "font-medium tracking-wide text-gray-200 transition-colors duration-200 hover:text-deep-purple-accent-400"
                 }
               >
                 Courses
@@ -42,8 +42,8 @@ const Header = () => {
                 title="Blog"
                 className={({ isActive }) =>
                   isActive
-                    ? "font-medium tracking-wide text-blue-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-                    : "font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                    ? "font-medium tracking-wide text-red-300 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                    : "font-medium tracking-wide  transition-colors duration-200 hover:text-deep-purple-accent-400"
                 }
               >
                 Blog
@@ -56,8 +56,8 @@ const Header = () => {
                 title="FAQ"
                 className={({ isActive }) =>
                   isActive
-                    ? "font-medium tracking-wide text-blue-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-                    : "font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                    ? "font-medium tracking-wide text-red-300 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                    : "font-medium tracking-wide  transition-colors duration-200 hover:text-deep-purple-accent-400"
                 }
               >
                 FAQ
@@ -72,6 +72,26 @@ const Header = () => {
                 alt=""
               />
             </li>
+            <NavLink
+              to="/login"
+              aria-label="login"
+              title="Login"
+              className={({ isActive }) =>
+                isActive
+                  ? "font-medium tracking-wide text-red-300 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                  : "font-medium tracking-wide  transition-colors duration-200 hover:text-deep-purple-accent-400"
+              }
+            >
+              Login
+            </NavLink>
+            <NavLink
+              // to="/logout"
+              aria-label="logout"
+              title="Logout"
+              className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-deep-purple-accent-400"
+            >
+              Logout
+            </NavLink>
           </ul>
           <div className="lg:hidden">
             <button
@@ -80,7 +100,7 @@ const Header = () => {
               className="p-2 -mr-1 transition duration-200 rounded focus:outline-none focus:shadow-outline hover:bg-deep-purple-50 focus:bg-deep-purple-50"
               onClick={() => setIsMenuOpen(true)}
             >
-              <svg className="w-5 text-gray-600" viewBox="0 0 24 24">
+              <svg className="w-5 text-gray-200" viewBox="0 0 24 24">
                 <path
                   fill="currentColor"
                   d="M23,13H1c-0.6,0-1-0.4-1-1s0.4-1,1-1h22c0.6,0,1,0.4,1,1S23.6,13,23,13z"
@@ -106,24 +126,22 @@ const Header = () => {
                         title="Next-Coder"
                         className="inline-flex items-center"
                       >
-                        <svg
-                          className="w-8 text-deep-purple-accent-400"
-                          viewBox="0 0 24 24"
-                          strokeLinejoin="round"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                          strokeMiterlimit="10"
-                          stroke="currentColor"
-                          fill="none"
+                        <Link
+                          to="/"
+                          aria-label="Next-Coder"
+                          title="Next-Coder"
+                          className="inline-flex items-center"
                         >
-                          <rect x="3" y="1" width="7" height="12" />
-                          <rect x="3" y="17" width="7" height="6" />
-                          <rect x="14" y="1" width="7" height="6" />
-                          <rect x="14" y="11" width="7" height="12" />
-                        </svg>
-                        <span className="ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase">
-                          Next-Coder
-                        </span>
+                          <img
+                            className="w-18 h-12 rounded-2xl "
+                            src={logo}
+                            alt=""
+                          />
+
+                          <span className="ml-2 text-2xl font-bold tracking-wide text-red-300 uppercase">
+                            Next-Coder
+                          </span>
+                        </Link>
                       </Link>
                     </div>
                     <div>
@@ -145,34 +163,79 @@ const Header = () => {
                   <nav>
                     <ul className="space-y-4">
                       <li>
-                        <Link
-                          to="/"
+                        <NavLink
+                          to="/courses"
                           aria-label="Courses"
                           title="Courses"
-                          className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                          className={({ isActive }) =>
+                            isActive
+                              ? "font-medium tracking-wide text-red-300 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                              : "font-medium tracking-wide  transition-colors duration-200 hover:text-deep-purple-accent-400"
+                          }
                         >
                           Courses
-                        </Link>
+                        </NavLink>
                       </li>
                       <li>
-                        <Link
+                        <NavLink
                           to="/blog"
                           aria-label="Blog"
                           title="Blog"
-                          className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                          className={({ isActive }) =>
+                            isActive
+                              ? "font-medium tracking-wide text-red-300 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                              : "font-medium tracking-wide  transition-colors duration-200 hover:text-deep-purple-accent-400"
+                          }
                         >
                           Blog
-                        </Link>
+                        </NavLink>
                       </li>
                       <li>
-                        <Link
+                        <NavLink
                           to="/faq"
                           aria-label="FAQ"
                           title="FAQ"
-                          className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                          className={({ isActive }) =>
+                            isActive
+                              ? "font-medium tracking-wide text-red-300 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                              : "font-medium tracking-wide  transition-colors duration-200 hover:text-deep-purple-accent-400"
+                          }
                         >
                           FAQ
-                        </Link>
+                        </NavLink>
+                      </li>
+                      <li>
+                        <img
+                          aria-label="FAQ"
+                          title="Ertugrul"
+                          className="w-10 rounded-full"
+                          src="https://i1.sndcdn.com/artworks-8A3UNl5vbfHj7PP0-6QAQjA-t500x500.jpg"
+                          alt=""
+                        />
+                      </li>
+                      <li>
+                        <NavLink
+                          to="/login"
+                          aria-label="login"
+                          title="Login"
+                          className={({ isActive }) =>
+                            isActive
+                              ? "font-medium tracking-wide text-red-300 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                              : "font-medium tracking-wide  transition-colors duration-200 hover:text-deep-purple-accent-400"
+                          }
+                        >
+                          Login
+                        </NavLink>
+                      </li>
+                      <li>
+                        <NavLink
+                          // to="/logout"
+                          aria-label="logout"
+                          title="Logout"
+                          className=" font-medium tracking-wide text-black transition-colors duration-200 hover:text-deep-purple-accent-400"
+                        >
+                          Logout
+                        </NavLink>
                       </li>
                     </ul>
                   </nav>

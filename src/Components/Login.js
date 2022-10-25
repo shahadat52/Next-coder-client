@@ -4,10 +4,10 @@ import { FaGithub, FaGoogle } from "react-icons/fa";
 const Login = () => {
   return (
     <div className="flex justify-center items-center pt-8">
-      <div className="flex flex-col max-w-md p-6 rounded-md sm:p-10 bg-gray-100 text-gray-900">
+      <div className="flex flex-col max-w-md p-6 rounded-md sm:p-10 bg-gray-200 text-gray-900">
         <div className="mb-8 text-center">
-          <h1 className="my-3 text-4xl font-bold">Sign in</h1>
-          <p className="text-sm text-gray-400">
+          <h1 className="my-3 text-4xl font-bold">Log in</h1>
+          <p className="text-sm text-gray-500">
             Sign in to access your account
           </p>
         </div>
@@ -28,8 +28,9 @@ const Login = () => {
                 name="email"
                 id="email"
                 placeholder="Enter Your Email Here"
-                className="w-full px-3 py-2 border rounded-md border-gray-300 focus:border-gray-900 bg-gray-200 text-gray-900"
+                className="w-full px-3 py-2 border rounded-md border-gray-300 focus:border-gray-900 bg-gray-300 text-gray-900"
                 data-temp-mail-org="0"
+                required
               />
             </div>
             <div>
@@ -39,17 +40,13 @@ const Login = () => {
                 </label>
               </div>
               <input
-                // type={showPass ? 'text' : 'password'}
                 type="password"
                 name="password"
                 id="password"
                 placeholder="*******"
-                className="w-full px-3 py-2 border rounded-md border-gray-300 bg-gray-200 focus:border-gray-900 text-gray-900"
+                className="w-full px-3 py-2 border rounded-md border-gray-300 bg-gray-300 focus:border-gray-900 text-gray-900"
+                required
               />
-
-              {/* <button onClick={() => setShowPass(!showPass)}>
-                Show Password
-              </button> */}
             </div>
           </div>
 
@@ -62,14 +59,7 @@ const Login = () => {
             </button>
           </div>
         </form>
-        <div className="space-y-1">
-          <button
-            // onClick={handleReset}
-            className="text-xs hover:underline text-gray-400"
-          >
-            Forgot password?
-          </button>
-        </div>
+        <div className="space-y-1"></div>
         <div className="flex items-center pt-4 space-x-1">
           <div className="flex-1 h-px sm:w-16 dark:bg-gray-700"></div>
           <p className="px-3 text-sm dark:text-gray-400">
@@ -77,6 +67,7 @@ const Login = () => {
           </p>
           <div className="flex-1 h-px sm:w-16 dark:bg-gray-700"></div>
         </div>
+        <div></div>
         <div className="flex justify-center space-x-4">
           <button
             // onClick={handleGoogleSignin}
@@ -86,10 +77,6 @@ const Login = () => {
           >
             <FaGoogle />
           </button>
-
-          {/* <button  className="p-3 rounded-sm">
-            
-          </button> */}
 
           <button
             // onClick={handleGoogleSignin}
