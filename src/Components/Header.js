@@ -1,12 +1,23 @@
 import React, { useState } from "react";
 import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
+import Swal from "sweetalert2";
 import logo from "../assets/coder.png";
 import { AuthContext } from "./Context/UserContext";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const { user } = useContext(AuthContext);
+  const { user, logOut } = useContext(AuthContext);
+
+  const handleLogOut = () => {
+    logOut()
+      .then(() => {
+        Swal.fire("User Log Out", "", "success");
+      })
+      .catch((error) => {
+        // An error happened.
+      });
+  };
   return (
     <div className="bg-gray-700">
       <div className="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
@@ -79,7 +90,7 @@ const Header = () => {
                 </li>
                 <li>
                   <NavLink
-                    // to="/logout"
+                    onClick={handleLogOut}
                     aria-label="logout"
                     title="Logout"
                     className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-deep-purple-accent-400"
@@ -232,7 +243,7 @@ const Header = () => {
                           </li>
                           <li>
                             <NavLink
-                              // to="/logout"
+                              onClick={handleLogOut}
                               aria-label="logout"
                               title="Logout"
                               className=" font-medium tracking-wide text-black transition-colors duration-200 hover:text-deep-purple-accent-400"

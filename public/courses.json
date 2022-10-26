@@ -1,0 +1,57 @@
+[
+  {
+    "id": "1",
+    "index": 0,
+    "price": 500,
+    "name": "HTML",
+    "picture": "https://www.oxfordwebstudio.com/user/pages/06.da-li-znate/sta-je-html/sta-je-html.jpg",
+    "description": "The HyperText Markup Language or HTML is the standard markup language for documents designed to be displayed in a web browser. It can be assisted by technologies such as Cascading Style Sheets (CSS) and scripting languages such as JavaScript. HTML describes the structure of a web page semantically and originally included cues for the appearance of the document.",
+    "category": "structure"
+  },
+  {
+    "id": "2",
+    "index": 1,
+    "name": "CSS",
+    "picture": "https://www.oxfordwebstudio.com/user/pages/06.da-li-znate/sta-je-css/sta-je-css.png",
+    "description": "Cascading Style Sheets (CSS) is a style sheet language used for describing the presentation of a document written in a markup language such as HTML or XML. CSS is designed to enable the separation of content and presentation, including layout, colors, and fonts. This separation can improve content accessibility; provide more flexibility and control in the specification of presentation characteristics",
+    "price": 350,
+    "category": "design & style"
+  },
+  {
+    "id": "3",
+    "index": 2,
+    "name": "Tailwind",
+    "picture": "https://owlwebdev.com/assets/_1200x630_crop_center-center_none/9483/tailwind.jpg",
+    "description": "Tailwind CSS is an open source CSS framework. The main feature of this library is that, unlike other CSS frameworks like Bootstrap, it does not provide a series of predefined classes for elements such as buttons or tables. Instead, it creates a list of utility CSS classes that can be used to style each element by mixing and matching",
+    "price": 300,
+    "category": "design & style"
+  },
+  {
+    "id": "4",
+    "index": 3,
+    "name": "Java Script",
+    "picture": "https://play-lh.googleusercontent.com/UbCda6jaJQ_U22p6B9q30zLZsES7GDzOPSv_gvOpjJlSqz3sK4vXAwIokzYdQDExnO4",
+    "description": "JavaScript often abbreviated as JS, is a programming language that is one of the core technologies of the World Wide Web, alongside HTML and CSS. As of 2022, 98% of websites use JavaScript on the client side for webpage behavior, often incorporating third-party libraries. All major web browsers have a dedicated JavaScript engine V8 to execute the code on users devices.JavaScript is a high-level, often just-in-time compiled language that conforms to the ECMAScript standard. It has dynamic typing, prototype-based object-orientation, and first-class functions. It is multi-paradigm, supporting event-driven, functional, and imperative programming styles. It has application programming interfaces (APIs) for working with text, dates, regular expressions, standard data structures, and the Document Object Model (DOM)",
+    "price": 800,
+    "category": "functionality"
+  },
+  {
+    "id": "5",
+    "index": 4,
+    "price": 1000,
+    "name": "React",
+    "picture": "https://www.freecodecamp.org/news/content/images/size/w2000/2020/02/Ekran-Resmi-2019-11-18-18.08.13.png",
+    "description": "React (also known as React.js or ReactJS) is a free and open-source front-end JavaScript library for building user interfaces based on UI components. It is maintained by Meta (formerly Facebook) and a community of individual developers and companies. React can be used as a base in the development of single-page, mobile, or server-rendered applications with frameworks like Next.js. However, React is only concerned with state management and rendering that state to the DOM, so creating React applications usually requires the use of additional libraries for routing, as well as certain client-side functionality.",
+    "category": "functionality"
+  },
+  {
+    "id": "6",
+    "index": 5,
+    "name": "Firebase",
+    "picture": "https://sujanbyanjankar.com.np/wp-content/uploads/2018/09/firebase_logo_shot.png",
+    "image": "https://firebase.google.com/images/social.png",
+    "description": "Firebase is a set of hosting services for any type of application (Android, iOS, Javascript, Node.js, Java, Unity, PHP, C++ ...). It offers NoSQL and real-time hosting of databases, content, social authentication (Google, Facebook, Twitter and Github), and notifications, or services, such as a real-time communication server.",
+    "price": 500,
+    "category": "authentication"
+  }
+]

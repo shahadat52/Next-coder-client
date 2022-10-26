@@ -1,7 +1,30 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FaGithub, FaGoogle } from "react-icons/fa";
+import { useContext } from "react";
+import { AuthContext } from "./Context/UserContext";
+import Swal from "sweetalert2";
 
 const Login = () => {
+  const { login } = useContext(AuthContext);
+  const navigate = useNavigate();
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const form = event.target;
+    const email = form.email.value;
+    const password = form.password.value;
+    console.log(email, password);
+    login(email, password)
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+        Swal.fire("Log In Successful", "", "success");
+        navigate("/courses");
+      })
+      .catch((error) => {
+        Swal.fire("Opps", error.message, "error");
+      });
+  };
   return (
     <div className="flex justify-center items-center pt-8">
       <div className="flex flex-col max-w-md p-6 rounded-md sm:p-10 bg-gray-200 text-gray-900">
@@ -12,7 +35,7 @@ const Login = () => {
           </p>
         </div>
         <form
-          //   onSubmit={handleSubmit}
+          onSubmit={handleSubmit}
           noValidate=""
           action=""
           className="space-y-6 ng-untouched ng-pristine ng-valid"

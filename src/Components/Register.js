@@ -6,9 +6,39 @@ import { AuthContext } from "./Context/UserContext";
 import Swal from "sweetalert2";
 
 const Register = () => {
-  const { logInWithGoogle } = useContext(AuthContext);
+  const { logInWithGoogle, createUser, updateImageAndName, logInWithGithub } =
+    useContext(AuthContext);
 
-  const handleGoogleSignin = () => {
+  const handleCreateUser = (event) => {
+    event.preventDefault();
+    const form = event.target;
+    const name = form.name.value;
+    const image = form.image.value;
+    const email = form.email.value;
+    const password = form.password.value;
+    console.log(name, image, email, password);
+
+    createUser(email, password)
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+        Swal.fire("User Create Success", "", "success");
+        updateImageAndName(name, image)
+          .then(() => {
+            Swal.fire("Information Updated", "", "success");
+          })
+          .catch((error) => {
+            Swal.fire("Opps", error.message, "error");
+          });
+      })
+      .catch((error) => {
+        console.error(error);
+
+        Swal.fire("Opps", error.message, "error");
+      });
+  };
+
+  const handleGoogleSignIn = () => {
     logInWithGoogle()
       .then((result) => {
         const user = result.user;
@@ -17,6 +47,20 @@ const Register = () => {
       })
       .catch((error) => {
         console.error(error);
+        Swal.fire("Opps", error.message, "error");
+      });
+  };
+
+  const handleGitSign = () => {
+    logInWithGithub()
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+        Swal.fire("User Login successful", "", "success");
+      })
+      .catch((error) => {
+        console.error(error);
+        Swal.fire("Opps", error.message, "error");
       });
   };
   return (
@@ -27,6 +71,7 @@ const Register = () => {
           <p className="text-sm text-gray-500">Create a new account</p>
         </div>
         <form
+          onSubmit={handleCreateUser}
           noValidate=""
           action=""
           className="space-y-12 ng-untouched ng-pristine ng-valid"
@@ -108,7 +153,7 @@ const Register = () => {
         </div>
         <div className="flex justify-center space-x-4">
           <button
-            onClick={handleGoogleSignin}
+            onClick={handleGoogleSignIn}
             aria-label="Log in with Google"
             title="Google Sign In"
             className="p-3 rounded-sm text-3xl"
@@ -117,7 +162,7 @@ const Register = () => {
           </button>
 
           <button
-            // onClick={handleGoogleSignin}
+            onClick={handleGitSign}
             aria-label="Log in with GitHub"
             title="GitHub Sign In"
             className="p-3 rounded-sm text-3xl"
