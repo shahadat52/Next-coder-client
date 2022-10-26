@@ -1,6 +1,8 @@
 import React from "react";
 import { Link, useLoaderData } from "react-router-dom";
 import "./CourseDetails.css";
+// import { PDFDownloadLink } from "react-pdf";
+// import PDFFile from "./PDFFile";
 
 const CourseDetails = () => {
   const details = useLoaderData();
@@ -15,9 +17,16 @@ const CourseDetails = () => {
           <div className="uppercase text-3xl  font-bold">{name}</div>
           <div>
             <button>
-              <span className="py-2 bg-slate-400 px-5 rounded-xl text-white">
-                Download PDF
-              </span>
+              {/* <PDFDownloadLink document={<PDFFile />} filename="FORM">
+                {({ loading }) =>
+                  loading ? (
+                    <button>Loading Document...</button>
+                  ) : (
+                    <button>Download</button>
+                  )
+                }
+              </PDFDownloadLink> */}
+              Download Pdf
             </button>
           </div>
         </div>
