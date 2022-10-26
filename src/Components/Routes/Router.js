@@ -10,6 +10,7 @@ import Home from "../Home";
 import Login from "../Login";
 import Main from "../Main";
 import Register from "../Register";
+import PrivateRoute from "./PrivateRoute";
 
 export const router = createBrowserRouter([
   {
@@ -43,7 +44,11 @@ export const router = createBrowserRouter([
             `https://next-coder-server.vercel.app/course/${params.name}`
           );
         },
-        element: <CheekOut />,
+        element: (
+          <PrivateRoute>
+            <CheekOut />
+          </PrivateRoute>
+        ),
       },
     ],
   },

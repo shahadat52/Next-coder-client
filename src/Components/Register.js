@@ -1,13 +1,16 @@
 import React from "react";
 import { useContext } from "react";
 import { FaGithub, FaGoogle } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "./Context/UserContext";
 import Swal from "sweetalert2";
 
 const Register = () => {
   const { logInWithGoogle, createUser, updateImageAndName, logInWithGithub } =
     useContext(AuthContext);
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
 
   const handleCreateUser = (event) => {
     event.preventDefault();
@@ -26,6 +29,7 @@ const Register = () => {
         updateImageAndName(name, image)
           .then(() => {
             Swal.fire("Information Updated", "", "success");
+            navigate(from, { replace: true });
           })
           .catch((error) => {
             Swal.fire("Opps", error.message, "error");
@@ -44,6 +48,7 @@ const Register = () => {
         const user = result.user;
         console.log(user);
         Swal.fire("Good job!", "User Login successful!", "success");
+        navigate(from, { replace: true });
       })
       .catch((error) => {
         console.error(error);
@@ -57,6 +62,7 @@ const Register = () => {
         const user = result.user;
         console.log(user);
         Swal.fire("User Login successful", "", "success");
+        navigate(from, { replace: true });
       })
       .catch((error) => {
         console.error(error);
