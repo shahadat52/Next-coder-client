@@ -1,5 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import Blog from "../Blog/Blog";
+import CheekOut from "../CheekOut";
 import Course from "../Course";
 import CourseDetails from "../CourseDetails";
 import Courses from "../Courses/Courses";
@@ -34,6 +35,15 @@ export const router = createBrowserRouter([
           );
         },
         element: <CourseDetails />,
+      },
+      {
+        path: "course/:name",
+        loader: async ({ params }) => {
+          return fetch(
+            `https://next-coder-server.vercel.app/course/${params.name}`
+          );
+        },
+        element: <CheekOut />,
       },
     ],
   },
