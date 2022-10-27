@@ -4,7 +4,7 @@ A simple React app built with React, React Router Dom, Context Api. I make it se
 
 ## Live Link
 
-Hosted in Netlify -> [NextCoder](https://next-coding.web.app)
+Hosted in Firebase -> [NextCoder](https://next-coding.web.app)
 
 ## API
 
