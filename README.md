@@ -8,7 +8,7 @@ Hosted in Firebase -> [NextCoder](https://next-coding.web.app)
 
 ## API
 
-Documentation Link -> [Data Collection Api](https://next-coder-server.vercel.app/courses)
+Api Link -> [Data Collection Api](https://next-coder-server.vercel.app/courses)
 
 ## React Router Dom v6.4
 
