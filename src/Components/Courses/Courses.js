@@ -8,7 +8,7 @@ const Courses = () => {
   console.log(courses);
   return (
     <div className="grid lg:grid-cols-4 md:grid-cols-1 sm:grid-cols-1">
-      <div className=" h-full w-full mx-auto bg-slate-600 ">
+      <div className=" h-full w-full mx-auto bg-slate-600 rounded-xl ">
         <h1 className="text-center text-3xl my-7 font-bold  text-slate-200  ">
           Courses Options
         </h1>

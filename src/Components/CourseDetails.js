@@ -8,7 +8,7 @@ const CourseDetails = () => {
   const { name, description, picture, topics, duration, modules } = details;
   //
   return (
-    <div className="flex justify-center h-full bg-slate-400 ">
+    <div className="flex justify-center h-full  ">
       <div className="cart-container ">
         <div className="flex justify-between my-3">
           <img className="w-12 h-10 rounded-full" src={picture} alt="" />

@@ -3,7 +3,7 @@ import "./Blog.css";
 
 const Blog = () => {
   return (
-    <div className="text-center text-gray-800">
+    <div className="text-center text-gray-500">
       <h1 className="text-5xl font-bold mb-10 pb-10 border-black border-b-2">
         Common Interview Questions
       </h1>

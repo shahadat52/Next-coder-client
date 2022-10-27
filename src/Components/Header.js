@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useEffect } from "react";
 import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import Swal from "sweetalert2";
@@ -6,6 +7,16 @@ import logo from "../assets/coder.png";
 import { AuthContext } from "./Context/UserContext";
 
 const Header = () => {
+  const [theme, setTheme] = useState("light-theme");
+
+  const toggleThem = () => {
+    theme === "dark-theme" ? setTheme("light-theme") : setTheme("dark-theme");
+  };
+
+  useEffect(() => {
+    document.body.className = theme;
+  }, [theme]);
+
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { user, logOut } = useContext(AuthContext);
 
@@ -14,13 +25,20 @@ const Header = () => {
       .then(() => {
         Swal.fire("User Log Out", "", "success");
       })
-      .catch((error) => {
-        // An error happened.
-      });
+      .catch((error) => {});
+  };
+
+  const darkMode = {
+    color: "white",
+    backgroundColor: "black",
+  };
+  const lightMode = {
+    color: "black",
+    backgroundColor: "white",
   };
   return (
-    <div className="bg-gray-700">
-      <div className="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
+    <div className={theme === "dark-theme" ? darkMode : lightMode}>
+      <div className="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 text-gray-500">
         <div className="relative flex items-center justify-between">
           <Link
             to="/"
@@ -34,7 +52,14 @@ const Header = () => {
               Next-Coder
             </span>
           </Link>
-          <ul className="flex items-center hidden space-x-8 lg:flex text-gray-200">
+          <button
+            onClick={toggleThem}
+            className="text-gray-200 font-bold bg-gray-500 px-4 py-2 rounded-lg"
+          >
+            {theme === "dark-theme" ? "Light" : "Dark"}
+          </button>
+
+          <ul className="flex items-center hidden space-x-8 lg:flex ">
             <li>
               <NavLink
                 to="/courses"
@@ -43,7 +68,7 @@ const Header = () => {
                 className={({ isActive }) =>
                   isActive
                     ? "font-medium tracking-wide text-red-300 transition-colors duration-200 hover:text-deep-purple-accent-400"
-                    : "font-medium tracking-wide text-gray-200 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                    : "font-medium tracking-wide  transition-colors duration-200 hover:text-deep-purple-accent-400"
                 }
               >
                 Courses
@@ -93,7 +118,7 @@ const Header = () => {
                     onClick={handleLogOut}
                     aria-label="logout"
                     title="Logout"
-                    className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                    className="font-medium tracking-wide  transition-colors duration-200 hover:text-deep-purple-accent-400"
                   >
                     Logout
                   </NavLink>

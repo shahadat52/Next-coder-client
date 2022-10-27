@@ -4,7 +4,7 @@ import logo from "../assets/coder.png";
 
 const Footer = () => {
   return (
-    <footer className="px-4   text-gray-800">
+    <footer className="px-4   text-gray-500 ">
       <hr className="w-full" />
 
       <div className="container flex flex-col justify-between py-10 mx-auto space-y-8 lg:flex-row lg:space-y-0">
