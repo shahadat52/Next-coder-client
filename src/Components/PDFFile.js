@@ -1,7 +1,5 @@
 // import React from "react";
-// import { Page, Text, Image, Document, StyleSheet } from "react-pdf";
-// // import LebronStretch from "../photos/lebron_transparent.png";
-// import image from "../../src/assets/coder.png";
+// import { Page, Text, Image, Document, StyleSheet } from "@react-pdf/renderer";
 
 // const styles = StyleSheet.create({
 //   body: {
@@ -45,7 +43,6 @@
 //     <Document>
 //       <Page style={styles.body}>
 //         <Text style={styles.header} fixed></Text>
-//         <Image style={styles.image} src={image} />
 //         <Text style={styles.text}>
 //           Oh right. I forgot about the battle. Wow, you got that off the
 //           Internet? In my day, the Internet was only used to download

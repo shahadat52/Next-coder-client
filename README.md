@@ -24,6 +24,6 @@ Fire base -> [Fire-base](https://console.firebase.google.com/)
 
 Icon -> [React-Icons](https://react-icons.github.io/react-icons/)
 
-Lottie Animation -> [FreePik](https://www.freepik.com/)
+Image Resources -> [FreePik](https://www.freepik.com/)
 
 ## Other Tailwind Component Resources

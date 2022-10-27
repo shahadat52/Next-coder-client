@@ -5,7 +5,8 @@ import "./CourseDetails.css";
 const CourseDetails = () => {
   const details = useLoaderData();
   console.log(details);
-  const { name, description, picture, topics, duration, modules } = details;
+  const { name, description, picture, topics, duration, modules, pdf } =
+    details;
   //
   return (
     <div className="flex justify-center h-full  ">
@@ -14,7 +15,9 @@ const CourseDetails = () => {
           <img className="w-12 h-10 rounded-full" src={picture} alt="" />
           <div className="uppercase text-3xl  font-bold">{name}</div>
           <div>
-            <button>Download Pdf</button>
+            <button className="inline-flex items-center justify-center h-12 px-6 mr-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-blue-400 hover:bg-blue-700 focus:shadow-outline focus:outline-none">
+              Download
+            </button>
           </div>
         </div>
         <div>
