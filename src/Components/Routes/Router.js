@@ -1,7 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
-import Blog from "../Blog/Blog";
 import CheekOut from "../CheekOut";
 import Course from "../Course";
+import Blog from "../Blog/Blog";
 import CourseDetails from "../CourseDetails";
 import Courses from "../Courses/Courses";
 import ErrorPage from "../ErrorPage";

@@ -1,13 +1,11 @@
 import React from "react";
 import { Link, useLoaderData } from "react-router-dom";
 import "./CourseDetails.css";
-// import { PDFDownloadLink } from "react-pdf";
-// import PDFFile from "./PDFFile";
 
 const CourseDetails = () => {
   const details = useLoaderData();
   console.log(details);
-  const { name, description, picture, topics } = details;
+  const { name, description, picture, topics, duration, modules } = details;
   //
   return (
     <div className="flex justify-center h-full bg-slate-400 ">
@@ -16,18 +14,7 @@ const CourseDetails = () => {
           <img className="w-12 h-10 rounded-full" src={picture} alt="" />
           <div className="uppercase text-3xl  font-bold">{name}</div>
           <div>
-            <button>
-              {/* <PDFDownloadLink document={<PDFFile />} filename="FORM">
-                {({ loading }) =>
-                  loading ? (
-                    <button>Loading Document...</button>
-                  ) : (
-                    <button>Download</button>
-                  )
-                }
-              </PDFDownloadLink> */}
-              Download Pdf
-            </button>
+            <button>Download Pdf</button>
           </div>
         </div>
         <div>
@@ -37,8 +24,17 @@ const CourseDetails = () => {
             alt=""
           />
         </div>
+        <div className="flex justify-between">
+          <div>
+            <span className="font-bold">Course Duration:</span> {duration}{" "}
+            <small>Hours</small>
+          </div>
+          <div>
+            <span className="font-bold">Module:</span> {modules}
+          </div>
+        </div>
         <div className="mb-4">
-          <p>Topics</p>
+          <p className="font-bold">Topics</p>
           {topics.map((topic, index) => (
             <li key={index}>{topic}</li>
           ))}

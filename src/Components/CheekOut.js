@@ -25,9 +25,12 @@ const CheekOut = () => {
           <span className="py-auto text-lg font-bold">{user.displayName}</span>
         </div>
       </div>
-      <p className="text-center bg-slate-200 uppercase font-bold w-96 mx-auto mt-4 py-5 rounded-2xl text-5xl">
-        {info.name}
-      </p>
+      <div>
+        <p className="text-center relative bg-slate-200 uppercase font-bold w-96 mx-auto mt-4 py-5 rounded-2xl text-5xl">
+          {info.name}{" "}
+          <span className="text-lg absolute top-0 right-2">${info.price}</span>
+        </p>
+      </div>
     </div>
   );
 };
