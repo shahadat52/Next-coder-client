@@ -22,6 +22,7 @@ const Login = () => {
         console.log(user);
         Swal.fire("Log In Successful", "", "success");
         navigate(from, { replace: true });
+        form.reset();
       })
       .catch((error) => {
         Swal.fire("Opps", error.message, "error");

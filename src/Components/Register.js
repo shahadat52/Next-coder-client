@@ -30,6 +30,7 @@ const Register = () => {
           .then(() => {
             Swal.fire("Information Updated", "", "success");
             navigate(from, { replace: true });
+            form.reset();
           })
           .catch((error) => {
             Swal.fire("Opps", error.message, "error");
