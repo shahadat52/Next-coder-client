@@ -18,7 +18,7 @@ export const router = createBrowserRouter([
     element: <Main />,
     errorElement: <ErrorPage />,
     children: [
-      { path: "/", element: <Home /> },
+      { path: "/home", element: <Home /> },
       {
         path: "/courses",
         loader: () => fetch("https://next-coder-server.vercel.app/courses"),
@@ -50,6 +50,7 @@ export const router = createBrowserRouter([
           </PrivateRoute>
         ),
       },
+      { index: true, element: <Home /> },
     ],
   },
 ]);

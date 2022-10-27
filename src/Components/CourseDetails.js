@@ -7,8 +7,7 @@ import PDFFile from "./PDFFile";
 const CourseDetails = () => {
   const details = useLoaderData();
   console.log(details);
-  const { name, description, picture, topics, duration, modules } =
-    details;
+  const { name, description, picture, topics, duration, modules } = details;
   //
   return (
     <div className="flex justify-center h-full  ">

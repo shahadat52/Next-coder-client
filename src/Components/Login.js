@@ -77,7 +77,6 @@ const Login = () => {
                 Email address
               </label>
               <input
-                // onBlur={(event) => setUserEmail(event.target.value)}
                 type="email"
                 name="email"
                 id="email"

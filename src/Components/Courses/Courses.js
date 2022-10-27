@@ -4,7 +4,6 @@ import Course from "../Course";
 
 const Courses = () => {
   const courses = useLoaderData();
-  // const { name, id } = courses;
   console.log(courses);
   return (
     <div className="grid lg:grid-cols-4 md:grid-cols-1 sm:grid-cols-1">

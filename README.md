@@ -4,7 +4,7 @@ A simple React app built with React, React Router Dom, Firebase, Context Api.
 
 ## Live Link
 
-Hosted in Netlify -> [NextCoder](https://proreader.netlify.app/)
+Hosted in Netlify -> [NextCoder](https://next-coding.web.app)
 
 ## API
 

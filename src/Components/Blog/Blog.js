@@ -3,7 +3,7 @@ import "./Blog.css";
 
 const Blog = () => {
   return (
-    <div className="text-center text-gray-500">
+    <div className="text-center text-blue-400">
       <h1 className="text-5xl font-bold mb-10 pb-10 border-black border-b-2">
         Common Interview Questions
       </h1>
@@ -15,7 +15,7 @@ const Blog = () => {
           <p>
             <span className="font-bold text-xl">
               We will use firebase because
-            </span>{" "}
+            </span>
             Indeed, Firebase is a less technical and time-saving alternative to
             writing full-fledged backend code for dynamic apps. You might also
             want to consider leveraging this tool if you eventually wish to host
@@ -80,7 +80,7 @@ const Blog = () => {
             CORS preflight requests are sent regardless of the used libraries or
             frameworks to send requests from web browser. That's why you won't
             need to conform CORS requirements when working with API from your
-            backend application................
+            backend application
           </p>
         </div>
 

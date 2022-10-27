@@ -9,7 +9,7 @@ import { AuthContext } from "./Context/UserContext";
 const Header = () => {
   const [theme, setTheme] = useState("light-theme");
 
-  const toggleThem = () => {
+  const toggleTheme = () => {
     theme === "dark-theme" ? setTheme("light-theme") : setTheme("dark-theme");
   };
 
@@ -38,7 +38,7 @@ const Header = () => {
   };
   return (
     <div className={theme === "dark-theme" ? darkMode : lightMode}>
-      <div className="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 text-gray-500">
+      <div className="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 text-blue-500 ">
         <div className="relative flex items-center justify-between">
           <Link
             to="/"
@@ -48,18 +48,32 @@ const Header = () => {
           >
             <img className="w-18 h-12 rounded-2xl " src={logo} alt="" />
 
-            <span className="ml-2 text-2xl font-bold tracking-wide text-red-300 uppercase">
+            <span className="ml-2 text-2xl font-bold tracking-wide text-blue-500 uppercase">
               Next-Coder
             </span>
           </Link>
           <button
-            onClick={toggleThem}
-            className="text-gray-200 font-bold bg-gray-500 px-4 py-2 rounded-lg"
+            onClick={toggleTheme}
+            className="text-blue-500 font-bold bg-sky-300 px-4 py-2 rounded-lg"
           >
             {theme === "dark-theme" ? "Light" : "Dark"}
           </button>
 
           <ul className="flex items-center hidden space-x-8 lg:flex ">
+            <li>
+              <NavLink
+                to="/home"
+                aria-label="home"
+                title="Home"
+                className={({ isActive }) =>
+                  isActive
+                    ? "font-medium tracking-wide text-red-300 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                    : "font-medium tracking-wide  transition-colors duration-200 hover:text-deep-purple-accent-400"
+                }
+              >
+                Home
+              </NavLink>
+            </li>
             <li>
               <NavLink
                 to="/courses"
