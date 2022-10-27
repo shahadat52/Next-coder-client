@@ -1,6 +1,6 @@
 # Next Coder Repository
 
-A simple React app built with React, React Router Dom, Firebase, Context Api.
+A simple React app built with React, React Router Dom, Context Api. I make it secure with Firebase authentication system.
 
 ## Live Link
 
@@ -25,5 +25,9 @@ Fire base -> [Fire-base](https://console.firebase.google.com/)
 Icon -> [React-Icons](https://react-icons.github.io/react-icons/)
 
 Image Resources -> [FreePik](https://www.freepik.com/)
+
+Animation Resources -> [Lottie](https://lottiefiles.com/animation/react)
+
+Google font -> [Font](https://fonts.google.com/knowledge)
 
 ## Other Tailwind Component Resources
